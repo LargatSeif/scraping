@@ -30,7 +30,7 @@ function getSecondaryArticles($content){
 	{
 		foreach($title_list->find('a > div.title') as $key => $title)
 			{				
-				$article['title'] = $title->plaintext;
+				$article['title'] = utf8_decode($title->plaintext);
 			}
 
 			foreach($title_list->find('a') as $key => $a)
