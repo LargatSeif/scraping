@@ -71,7 +71,7 @@ function xmlToFile($xml ,$file_name){
 	$dom->preserveWhiteSpace = FALSE;
 	$dom->loadXML($xml->asXML());	
 	$d  = new DateTime();
-	$folder_name = $d->format('Y-m-d H-i');
+	$folder_name = "chourouk in " .$d->format('Y-m-d H-i');
 	mkdir($folder_name);
 	$dom->save("$folder_name/$file_name.xml");
 }
