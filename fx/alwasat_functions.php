@@ -1,14 +1,14 @@
 <?php 
 
-function getFirstData($content){		  
+function getFirstArticle($content , $content_url ,$content_sel){		  
 	$article_content 	= '';
 	$article_title 		= $content->find('div.mainInBlock > a > div.title',0)->plaintext;
 	$article_time		= $content->find('div.mainInBlock > time',0)->datetime;
 	$article_id			= $content->find('div.mainInBlock > a ',0)->href;
-	$article_url		= 'https://alwasat.ly'.$article_id;
+	$article_url		= $content_url.$article_id;
 	$article_page 		= file_get_html($article_url); 
 
-	foreach ($article_page->find('div.art-content > p[style=direction: rtl;]') as $p) { 	
+	foreach ($article_page->find($content_sel) as $p) { 	
 		$article_content= $article_content . $p->plaintext;
 	}	 
 
@@ -28,7 +28,7 @@ function getSecondaryArticles($content){
 	{
 		foreach($title_list->find('a > div.title') as $key => $title)
 			{				
-				$article['title'] = utf8_encode($title->plaintext);
+				$article['title'] = $title->plaintext;
 			}
 
 			foreach($title_list->find('a') as $key => $a)
@@ -57,7 +57,7 @@ function getSecondaryArticles($content){
 	return $articles;
 }
 
-function getArticles($content , $container_selector , $title_selector , $time_selector ,$content_sel){
+function getArticles($content , $container_selector , $title_selector , $time_selector ,$content_url,$content_sel){
 	$articles =[];
 	
 	foreach($content->find($container_selector) as $key => $title_list)
@@ -71,7 +71,7 @@ function getArticles($content , $container_selector , $title_selector , $time_se
 
 			foreach($title_list->find($title_selector) as $key => $a)
 			{
-				$sub_url = 'https://alwasat.ly'.$a->href;
+				$sub_url = $content_url.$a->href;
 				$article['url']= $sub_url;
 				$content = file_get_html($sub_url); 
 				$data='';

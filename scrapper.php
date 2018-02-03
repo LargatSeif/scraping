@@ -2,35 +2,21 @@
 
 ini_set('max_execution_time', 600); 
 require_once 'lib/simple_html_dom.php' ;
-require_once 'functions.php';
+require_once 'alwasat_functions.php';
 
-if(isset($_POST)){
-	extract($_POST);
-	$nbr_pages 				= 	$nbr;
-
-	$url 					= 	$url;
-	//selectors
-	$container_sel 			=	$container;//"div#maincol > div.section-item";
-
-	$title_sel 				=	$title;//'div.title > a';
-
-	$content_sel			=	$content;//'div.art-content > p[style=direction: rtl;]';
-
-	$time_sel 				=	$time ;//'div.art-info > time';
-}
-else{
+	//number of pages to scrap
 	$nbr_pages 				= 	2;
 
+	//Urls 
 	$url 					= 	"https://alwasat.ly/ar/news/libya/";
+	$content_url 			=	'https://alwasat.ly';
+
 	//selectors
 	$container_sel 			=	"div#maincol > div.section-item";
-
 	$title_sel 				=	'div.title > a';
-
 	$content_sel			=	'div.art-content > p[style=direction: rtl;]';
-
 	$time_sel 				=	'div.art-info > time';
-}
+
 
 
 
@@ -46,8 +32,25 @@ for(	$i=0	;	$i < $nbr_pages;	$i++){
 
 	$page_url = $url .'?ls-art0='. $i *13;
 	$html->load_file($url);
+	
+	$data=[];
 
-	$data = getArticles($html, $container_sel,$title_sel,$time_sel, $content_sel);
+	$first_article 		= getFirstArticle($html,$content_url,$content_sel);
+	$secondary_articles = getSecondaryArticles($html);
+	$articles 			= getArticles($html,$container_sel,$title_sel,$time_sel,$content_url,$content_sel);
+
+	array_push($data,$first_article);
+
+	foreach ($secondary_articles as $key => $article) {
+		array_push($data, $article );
+	}
+
+	foreach ($articles as $key => $article) {
+		 array_push($data, $article );
+	}
+
+	
+	
 	
 	createXML($data ,$folder_name ,'page'.$i);
 }
