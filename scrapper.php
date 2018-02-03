@@ -2,7 +2,7 @@
 
 ini_set('max_execution_time', 600); 
 require_once 'lib/simple_html_dom.php' ;
-require_once 'alwasat_functions.php';
+require_once 'fx/alwasat_functions.php';
 
 	//number of pages to scrap
 	$nbr_pages 				= 	2;
