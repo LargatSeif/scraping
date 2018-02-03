@@ -1,6 +1,9 @@
 <?php 
-ini_set('max_execution_time', 600); 
-include('lib/simple_html_dom.php');
+
+
+
+<?php 
+
 
 function getFirstData($content){		  
 	$article_content 	= '';
@@ -59,7 +62,7 @@ function getSecondaryArticles($content){
 	return $articles;
 }
 
-function getArticles($content){
+function getArticles($content , sel ){
 	$articles =[];
 	
 	foreach($content->find('div#maincol > div.section-item') as $key => $title_list)
@@ -97,71 +100,18 @@ function getArticles($content){
 	return $articles;
 }
 
-function toXML($data){
-	
-	$xml = new SimpleXMLElement('<xml/>');	 
-
-	$article = $xml->addChild('article');
-	$article->addChild('title',$data['title']);
-	$article->addChild('content', html_entity_decode($data['content']));	    
-	$article->addChild('date', $data['date']);
-	$article->addChild('url', html_entity_decode($data['url'])); 	
-	 
-	return $xml;
-
-}
-	
-function xmlToFile($xml ,$file_name){
-	Header('Content-type:text/xml;charset=UTF-8');	
-
-	$dom = new DOMDocument('1.0','utf-8');
-	//$dom->preserveWhiteSpace = FALSE;
-
-	$dom->loadXML($xml->asXML());	
-
-	$d  = new DateTime();
-	$folder_name = "alwasat in " . $d->format('Y-m-d H-i');
-
-	mkdir($folder_name);
-
-	$dom->save("$folder_name/$file_name.xml");
-}
-
-$nbr_pages=3;
-
-for ($i=0; $i < $nbr_pages; $i++) { 
-	 
-	$url = "https://alwasat.ly/ar/news/libya/?ls-art0=".$i*13;
-	 
-	 
-
-	$content = file_get_html($url);
-	 
-	$data =[];
-	 
-	array_push($data, getFirstData($content));  
-
-	foreach (getSecondaryArticles($content) as $key => $article) {
-		 array_push($data, $article );
-	}
-	
-	foreach (getArticles($content) as $key => $article) {
-		 array_push($data, $article );
-	}
-		
-	//var_dump($data );die;
- 	
- 	 
-	foreach ($data as $key => $article) {
-
-		$xml_object = toXML($article)  ;
-
-		xmlToFile($xml_object, 'article'.$key);		 
-	} 
-	
-}
-
-echo "the end !";
- 
 
 
+
+ ?>
+
+
+
+
+
+
+
+
+
+
+ ?>
