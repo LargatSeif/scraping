@@ -13,6 +13,7 @@
         <li><a href="albasma.php" >ALBASMA</a></li>
         <li><a href="alwasat.php" >ALWASAT</a></li>
         <li><a href="libyaakhbart.php" >LIBYAAKHBART</a></li>
+        <li><a href="lana-news.php">LANA-NEWS</a></li>
     </ul>
 </body>
 </html>
