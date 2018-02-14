@@ -14,6 +14,7 @@ require_once 'fx/alwasat_functions.php';
 	$time_sel 				=	'div.art-info > time';
 //$content , $container_selector , $title_selector , $time_selector ,$content_sel
 $html = new simple_html_dom();
+
 $d  = new DateTime();
 $folder_name = "alwasat " . $d->format('Y-m-d H-i-s');
 mkdir($folder_name);
