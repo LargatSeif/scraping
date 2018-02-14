@@ -2,9 +2,11 @@
 
 function getFirstArticle($content , $content_url ,$content_sel){		  
 	$article_content 	= '';
-	$article_title 		= $content->find('div.mainInBlock > a > div.title',0)->plaintext;
-	$article_time		= $content->find('div.mainInBlock > time',0)->datetime;
+	
+	$article_title 		= $content->find('div.mainInBlock > a > div.title ',0)->plaintext;
+	$article_time		= $content->find('div.mainInBlock > time ',0)->datetime;
 	$article_id			= $content->find('div.mainInBlock > a ',0)->href;
+
 	$article_url		= $content_url.$article_id;
 	$article_page 		= file_get_html($article_url); 
 
