@@ -92,7 +92,6 @@ function getArticles($content , $container_selector , $title_selector , $time_se
 			
 		array_push($articles, $article);
 	}
-	
 	return $articles;
 }
 

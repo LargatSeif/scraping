@@ -24,14 +24,14 @@ require_once 'alwasat_functions.php';
 
 $html = new simple_html_dom();
 
-/*$d  = new DateTime();
+$d  = new DateTime();
 $folder_name = "alwasat " . $d->format('Y-m-d H-i-s');
 mkdir($folder_name);
 
 for(	$i=0	;	$i < $nbr_pages;	$i++){
-*/
-	$page_url = $url ;//.'?ls-art0='. $i *13;
-	$html->load_file($page_url );
+
+	$page_url = $url .'?ls-art0='. $i *13;
+	$html->load_file($url);
 	
 	$data=[];
 
@@ -49,14 +49,13 @@ for(	$i=0	;	$i < $nbr_pages;	$i++){
 		 array_push($data, $article );
 	}
 
-	var_dump($data);
-
-/*	
+	
+	
 	
 	createXML($data ,$folder_name ,'page'.$i);
 }
 
- */
+ 
  echo "the end";
 
  
