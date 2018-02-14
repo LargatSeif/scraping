@@ -9,11 +9,11 @@
 <body>
     Select magazine to scrap :
     <ul>
-        <li><a href="eanlibya.php" >EANLIBYA</a></li>
-        <li><a href="albasma.php" >ALBASMA</a></li>
-        <li><a href="alwasat.php" >ALWASAT</a></li>
-        <li><a href="libyaakhbart.php" >LIBYAAKHBART</a></li>
-        <li><a href="lana-news.php">LANA-NEWS</a></li>
+        <li><a href="magazines/eanlibya.php" >EANLIBYA</a></li>
+        <li><a href="magazines/albasma.php" >ALBASMA</a></li>
+        <li><a href="magazines/alwasat.php" >ALWASAT</a></li>
+        <li><a href="magazines/libyaakhbart.php" >LIBYAAKHBART</a></li>
+        <li><a href="magazines/lana-news.php">LANA-NEWS</a></li>
     </ul>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php 
 ini_set('max_execution_time', 6000);
-require_once 'lib/simple_html_dom.php' ;
-require_once 'fx/lana-news_functions.php';
+require_once '../lib/simple_html_dom.php' ;
+require_once '../fx/lana-news_functions.php';
 //number of pages to scrap
 $nbr_pages 				= 	1;
 //Urls 
@@ -18,7 +18,7 @@ $content_sel			=	'p.article_text';
 //$content , $container_selector , $title_selector , $time_selector ,$content_sel
 $html = new simple_html_dom();
 $d  = new DateTime();
-$folder_name = "lana-news " . $d->format('Y-m-d H-i-s');
+$folder_name = "../lana-news " . $d->format('Y-m-d H-i-s');
 mkdir($folder_name);
 
 for (	$i=1	;	$i <= $nbr_pages;	$i++){
@@ -38,5 +38,5 @@ for (	$i=1	;	$i <= $nbr_pages;	$i++){
 }
 
 echo "the end";
-echo "<a href='index.php' >Back to menu </a>";
+echo "<a href='../index.php' >Back to menu </a>";
 ?>

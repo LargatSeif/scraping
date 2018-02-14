@@ -1,7 +1,7 @@
 <?php 
 ini_set('max_execution_time', 6000); 
-require_once 'lib/simple_html_dom.php' ;
-require_once 'fx/libyaakhbart_functions.php';
+require_once '../lib/simple_html_dom.php' ;
+require_once '../fx/libyaakhbart_functions.php';
 	//number of pages to scrap
 	$nbr_pages 				= 	2;
 	//Urls 
@@ -15,7 +15,7 @@ require_once 'fx/libyaakhbart_functions.php';
 //$content , $container_selector , $title_selector , $time_selector ,$content_sel
 $html = new simple_html_dom();
 $d  = new DateTime();
-$folder_name = "libyaakhbar " . $d->format('Y-m-d H-i-s');
+$folder_name = "../libyaakhbar " . $d->format('Y-m-d H-i-s');
 mkdir($folder_name);
 //for(	$i=0	;	$i < $nbr_pages;	$i++){
 	$page_url = $url ;//.'?ls-art0='. $i *13;
@@ -33,5 +33,5 @@ mkdir($folder_name);
 	createXML($data ,$folder_name ,'page'.$i);
 //}
  echo "the end";
- echo "<a href='index.php'>Back to menu </a>";
+ echo "<a href='../index.php'>Back to menu </a>";
  ?>
