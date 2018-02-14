@@ -21,8 +21,8 @@ mkdir($folder_name);
 	$page_url = $url ;//.'?ls-art0='. $i *13;
 	$html->load_file($page_url);
 	$data=[];
-	$first_articles 		= getFirstArticles($html,$content_url,$content_sel);
-	$articles 			= getArticles($html, $container_sel , $content_url );
+	$first_articles 		= getFirstArticles($html,$content_sel);
+	$articles 			= getArticles($html, $container_sel);
 	foreach ($first_articles as $key => $article) {
 		array_push($data, $article );
 	}
@@ -33,4 +33,5 @@ mkdir($folder_name);
 	createXML($data ,$folder_name ,'page'.$i);
 //}
  echo "the end";
+ echo "<a href='index.php'>Back to menu </a>";
  ?>

@@ -6,11 +6,11 @@ require_once 'fx/albasma_functions.php';
 	$nbr_pages 				= 	2;
 	//Urls 
 	$url 					= 	"http://albasma.ly/?cat=64";
-		
+
 	//selectors
 	$container_sel 			=	"div.post-listing";
 	$title_sel 				=	'article.item-list > h2.post-box-title > a';
-	$time_sel				=	'article.post-listing > div.post-inner > span.updated ';
+	$time_sel				=	'div.post-inner > span.updated ';
 	$content_sel1			=	'article.post-listing > div.post-inner > div.entry > article.art-item > div.art-content > p';
 	$content_sel2			=	'article.post-listing > div.post-inner > div.entry > div.line > p';
 	$content_sel3			=	'article.post-listing > div.post-inner > div.entry > p';
@@ -32,4 +32,5 @@ for(	$i=1	;	$i <= $nbr_pages;	$i++){
 	createXML($data ,$folder_name ,'page'.$i);
 }
  echo "the end";
+ echo "<a href='index.php'>Back to menu </a>";
  ?>

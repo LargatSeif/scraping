@@ -81,6 +81,7 @@ function getArticles($content ,$title_selector , $container_selector, $content_s
 				$data = $data.$text->plaintext;
 			}	
 			$article['content'] = removeErrors($data);
+			
 			$article['date'] = $content->find($time_selector,0)->plaintext ;
 			array_push($articles, $article);
 		}		

@@ -5,7 +5,7 @@ function removeErrors($str){
 	return $toSave;
 }
 
-function getFirstArticles($content , $content_url ,$content_sel){
+function getFirstArticles($content ,$content_sel){
 	$article_content 	= '';
 	$articles = [];
 	foreach($content->find('header.entry-header') as $article )
@@ -29,7 +29,7 @@ function getFirstArticles($content , $content_url ,$content_sel){
 	return $articles;
 }
 
-function getArticles($content , $container_selector ,$content_url){
+function getArticles($content , $container_selector ){
 	$title_selector				=	'article > header > h2.entry-title > a';
 	$content_sel				=	'div.entry-content > p';
 	$time_selector				=	'div.date > span.updated ';

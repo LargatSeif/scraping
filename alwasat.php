@@ -35,5 +35,6 @@ for(	$i=0	;	$i < $nbr_pages;	$i++){
 	createXML($data ,$folder_name ,'page'.$i);
 }
 
- echo "the end";
+ echo "the end"; 
+ echo "<a href='index.php'>Back to menu </a>";
  ?>
