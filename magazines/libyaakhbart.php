@@ -15,7 +15,7 @@ require_once '../fx/libyaakhbart_functions.php';
 //$content , $container_selector , $title_selector , $time_selector ,$content_sel
 $html = new simple_html_dom();
 $d  = new DateTime();
-$folder_name = "../libyaakhbar " . $d->format('Y-m-d H-i-s');
+$folder_name = "../xml/libyaakhbar " . $d->format('Y-m-d H-i-s');
 mkdir($folder_name);
 for(	$i=0	;	$i < $nbr_pages;	$i++){
 	$page_url = $url.'/page/'.$i;

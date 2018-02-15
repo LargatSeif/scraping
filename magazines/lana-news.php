@@ -5,7 +5,7 @@ require_once '../fx/lana-news_functions.php';
 //number of pages to scrap
 $nbr_pages 				= 	10;
 //Urls 
-$url 					= 	"git";
+$url 					= 	"http://www.lana-news.ly/ara/news/category/4/%D8%A7%D9%84%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1_%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A%D8%A9";
 //selectors
 $container_sel 			=	"ul.news_titles";
 
@@ -18,7 +18,7 @@ $content_sel			=	'p.article_text';
 //$content , $container_selector , $title_selector , $time_selector ,$content_sel
 $html = new simple_html_dom();
 $d  = new DateTime();
-$folder_name = "../lana-news " . $d->format('Y-m-d H-i-s');
+$folder_name = "../xml/lana-news " . $d->format('Y-m-d H-i-s');
 mkdir($folder_name);
 
 for (	$i=1	;	$i <= $nbr_pages;	$i++){

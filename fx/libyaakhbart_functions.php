@@ -1,6 +1,6 @@
 <?php
 function removeErrors($str){	
-	$not_allowed = ['&nbsp;','&rdquo;','&ldquo;'];
+	$not_allowed = ['&nbsp;','&rdquo;','&ldquo;','&laquo;','&#13;','&raquo;','&ndash;'];
 	$toSave = str_replace( $not_allowed ,' ', $str);
 	return $toSave;
 }

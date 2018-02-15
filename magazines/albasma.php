@@ -3,7 +3,7 @@ ini_set('max_execution_time', 6000);
 require_once '../lib/simple_html_dom.php' ;
 require_once '../fx/albasma_functions.php';
 	//number of pages to scrap
-	$nbr_pages 				= 	10;
+	$nbr_pages 				= 	8;
 	//Urls 
 	$url 					= 	"http://albasma.ly/?cat=64";
 
@@ -18,7 +18,7 @@ require_once '../fx/albasma_functions.php';
 //$content , $container_selector , $title_selector , $time_selector ,$content_sel
 $html = new simple_html_dom();
 $d  = new DateTime();
-$folder_name = "../albasma " . $d->format('Y-m-d H-i-s');
+$folder_name = "../xml/albasma " . $d->format('Y-m-d H-i-s');
 mkdir($folder_name);
 for(	$i=1	;	$i <= $nbr_pages;	$i++){
 	$page_url = $url.'&paged='. $i ;
