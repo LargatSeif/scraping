@@ -3,9 +3,9 @@ ini_set('max_execution_time', 6000);
 require_once '../lib/simple_html_dom.php' ;
 require_once '../fx/lana-news_functions.php';
 //number of pages to scrap
-$nbr_pages 				= 	1;
+$nbr_pages 				= 	10;
 //Urls 
-$url 					= 	"http://www.lana-news.ly/ara/news/category/4/%D8%A7%D9%84%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1_%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A%D8%A9";
+$url 					= 	"git";
 //selectors
 $container_sel 			=	"ul.news_titles";
 

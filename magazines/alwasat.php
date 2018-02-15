@@ -3,7 +3,7 @@ ini_set('max_execution_time', 600);
 require_once '../lib/simple_html_dom.php' ;
 require_once '../fx/alwasat_functions.php';
 	//number of pages to scrap
-	$nbr_pages 				= 	1;
+	$nbr_pages 				= 10;
 	//Urls 
 	$url 					= 	"https://alwasat.ly/ar/news/libya/";
 	$content_url 			=	'https://alwasat.ly/';

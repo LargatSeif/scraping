@@ -15,5 +15,7 @@
         <li><a href="magazines/libyaakhbart.php" >LIBYAAKHBART</a></li>
         <li><a href="magazines/lana-news.php">LANA-NEWS</a></li>
     </ul>
+
+    
 </body>
 </html>

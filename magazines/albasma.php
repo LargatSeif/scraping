@@ -3,7 +3,7 @@ ini_set('max_execution_time', 6000);
 require_once '../lib/simple_html_dom.php' ;
 require_once '../fx/albasma_functions.php';
 	//number of pages to scrap
-	$nbr_pages 				= 	2;
+	$nbr_pages 				= 	10;
 	//Urls 
 	$url 					= 	"http://albasma.ly/?cat=64";
 
